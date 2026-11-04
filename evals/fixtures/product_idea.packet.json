@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "request_id": "EVAL-PRODUCT-001",
+  "original_question": "我打算成立一家專門開發 Edge AI 裝置的公司，可行性如何？",
+  "neutral_question": "在市場、資金與客群尚未知的情況下，投入 Edge AI 裝置公司相較先做需求驗證有哪些條件與風險？",
+  "problem_type": "Idea Evaluation",
+  "evaluation_mode": "SINGLE",
+  "objective": "辨識可持續的客戶需求與可負擔的產品切入點。",
+  "constraints": [
+    "不編造市場規模、毛利、投資回報或資金。"
+  ],
+  "known_facts": [
+    {
+      "id": "F01",
+      "claim": "使用者想成立 Edge AI 裝置公司。",
+      "source": "user:原始問題"
+    }
+  ],
+  "assumptions": [
+    "先以單一垂直應用進行低成本驗證。"
+  ],
+  "unknowns": [
+    "客戶、地區、資金、供應鏈與產品用途未定。"
+  ],
+  "options": [
+    {
+      "id": "P1",
+      "label": "成立裝置公司",
+      "description": "投入產品、硬體交付與營運。",
+      "status_quo": false
+    },
+    {
+      "id": "B0",
+      "label": "先驗證需求",
+      "description": "暫不成立公司，先做訪談及小型樣機。",
+      "status_quo": true
+    }
+  ],
+  "primary_option_id": "P1",
+  "baseline_rationale": "以維持現狀為比較基準。",
+  "criteria": [
+    {
+      "dimension": "value",
+      "priority": "HIGH",
+      "rationale": "是否達成使用者目標"
+    },
+    {
+      "dimension": "feasibility",
+      "priority": "HIGH",
+      "rationale": "是否能在現有限制下執行"
+    },
+    {
+      "dimension": "cost_efficiency",
+      "priority": "MEDIUM",
+      "rationale": "資源與機會成本"
+    },
+    {
+      "dimension": "risk_safety",
+      "priority": "HIGH",
+      "rationale": "失敗後果與緩解"
+    },
+    {
+      "dimension": "reversibility",
+      "priority": "HIGH",
+      "rationale": "是否可安全回復"
+    },
+    {
+      "dimension": "evidence_quality",
+      "priority": "HIGH",
+      "rationale": "核心主張的可靠程度"
+    }
+  ],
+  "domain_specialty": "Edge AI Product and Hardware Business Strategist",
+  "high_stakes": false,
+  "high_stakes_rationale": "未辨識重大不可逆後果，仍由評審檢查。",
+  "review_timeout_seconds": 180
+}

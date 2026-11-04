@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "request_id": "SMOKE-CRITICAL-001",
+  "test_kind": "reduced_native_smoke_in_project_maintenance",
+  "client_timezone": "Asia/Taipei",
+  "environment": {
+    "codex_cli": "0.166.0-alpha.6",
+    "host_active_slots_including_root": 4,
+    "configured_max_concurrent_subagents": 8
+  },
+  "standard_panel_size": 8,
+  "planned_reviewers": [
+    "A01",
+    "A03",
+    "A08"
+  ],
+  "intentionally_unscheduled_roles": [
+    "A02",
+    "A04",
+    "A05",
+    "A06",
+    "A07"
+  ],
+  "native_surface": "collaboration.spawn_agent",
+  "custom_agent_selector_used": false,
+  "custom_agents_discovered_by_native_prompt": 10,
+  "review_dispatches": [
+    {
+      "agent_id": "A01",
+      "native_agent_path": "/root/smoke_a01",
+      "role_file": ".codex/agents/advocate.toml",
+      "fork_turns": "none",
+      "requested_reasoning_effort": "medium",
+      "attempts": 1,
+      "status": "valid"
+    },
+    {
+      "agent_id": "A03",
+      "native_agent_path": "/root/smoke_a03",
+      "role_file": ".codex/agents/risk_analyst.toml",
+      "fork_turns": "none",
+      "requested_reasoning_effort": "medium",
+      "attempts": 1,
+      "status": "valid"
+    },
+    {
+      "agent_id": "A08",
+      "native_agent_path": "/root/smoke_a08",
+      "role_file": ".codex/agents/domain_specialist.toml",
+      "fork_turns": "none",
+      "requested_reasoning_effort": "high",
+      "attempts": 1,
+      "status": "valid"
+    }
+  ],
+  "round_one_locked_at": "2026-11-04T21:57:00+08:00",
+  "round_one_sha256": "bacb01b7ee27bf3690710f935f841e80da101a967e9e60ca338156a1fe9c00b8",
+  "verification_dispatch": {
+    "agent_id": "V02",
+    "native_agent_path": "/root/smoke_v02",
+    "role_file": ".codex/agents/risk_auditor.toml",
+    "fork_turns": "none",
+    "requested_reasoning_effort": "high",
+    "attempts": 1,
+    "status": "valid",
+    "after_round_one_lock": true,
+    "assigned_claim_ids": [
+      "C01",
+      "C02",
+      "C03"
+    ]
+  },
+  "verification_validation_at": "2026-11-04T22:00:23+08:00",
+  "verification_statuses": {
+    "C01": "CONFIRMED",
+    "C02": "CONFIRMED",
+    "C03": "UNRESOLVED"
+  },
+  "failed_attempts": [],
+  "context_independence": "fresh native contexts requested; no parent history or peer results in reviewer dispatch",
+  "workspace_isolation_enforced": false,
+  "tool_permission_isolation_enforced": false,
+  "effective_internal_model_observed": false,
+  "review_outputs_persisted_only_after_all_reviews_completed": true,
+  "limitations": [
+    "reduced 3-reviewer panel, not full eight",
+    "generic native role-file adapter, not custom agent_type selection",
+    "no new-chat natural-language full-run test",
+    "native timeout/retry branches not dynamically injected",
+    "no external research or real database inspection",
+    "no independent full subagent tool-trace audit"
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://perspective-council.invalid/schemas/review_packet.schema.json",
+  "title": "Frozen neutral review packet",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "original_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "neutral_question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "problem_type": {
+      "enum": [
+        "Idea Evaluation",
+        "Feasibility Assessment",
+        "Decision Analysis",
+        "Option Comparison",
+        "Technical Architecture Review",
+        "Risk Assessment",
+        "Open-ended Exploration"
+      ]
+    },
+    "evaluation_mode": {
+      "enum": [
+        "SINGLE",
+        "COMPARISON"
+      ]
+    },
+    "objective": {
+      "type": "string",
+      "minLength": 1
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "known_facts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "claim": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "id",
+          "claim",
+          "source"
+        ]
+      }
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "options": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]{0,31}$"
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "status_quo": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "description",
+          "status_quo"
+        ]
+      }
+    },
+    "primary_option_id": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]{0,31}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "baseline_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "dimension": {
+            "enum": [
+              "value",
+              "feasibility",
+              "cost_efficiency",
+              "risk_safety",
+              "reversibility",
+              "evidence_quality"
+            ]
+          },
+          "priority": {
+            "enum": [
+              "LOW",
+              "MEDIUM",
+              "HIGH"
+            ]
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "dimension",
+          "priority",
+          "rationale"
+        ]
+      }
+    },
+    "domain_specialty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "high_stakes": {
+      "type": "boolean"
+    },
+    "high_stakes_rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_timeout_seconds": {
+      "type": "integer",
+      "minimum": 30,
+      "maximum": 900
+    }
+  },
+  "required": [
+    "schema_version",
+    "request_id",
+    "original_question",
+    "neutral_question",
+    "problem_type",
+    "evaluation_mode",
+    "objective",
+    "constraints",
+    "known_facts",
+    "assumptions",
+    "unknowns",
+    "options",
+    "primary_option_id",
+    "baseline_rationale",
+    "criteria",
+    "domain_specialty",
+    "high_stakes",
+    "high_stakes_rationale",
+    "review_timeout_seconds"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "evaluation_mode": {
+            "const": "COMPARISON"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "options": {
+            "minItems": 2
+          },
+          "primary_option_id": {
+            "type": "null"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "primary_option_id": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]{0,31}$"
+          }
+        }
+      }
+    }
+  ]
+}

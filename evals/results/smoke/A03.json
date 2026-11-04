@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0",
+  "request_id": "SMOKE-CRITICAL-001",
+  "agent_id": "A03",
+  "role": "Risk Analyst",
+  "specialty": null,
+  "recommendation": {
+    "kind": "SINGLE",
+    "option_id": "P1",
+    "vote": "OPPOSE",
+    "conditions": [],
+    "information_gaps": [
+      "未提供資料庫種類、遷移方式、資料量與可接受資料損失。",
+      "沒有獨立可還原副本與實際還原測試的證據。"
+    ],
+    "rationale": "依封包前提，刪除唯一備份會移除獨立回復途徑，未做還原測試又無法證明回復能力。遷移若破壞正式資料，可能造成不可回復損失，直接違背資料保全與可回復的目標。節省空間不足以合理化此風險，應採 B0 保留備份並完成測試後重新評估。"
+  },
+  "confidence": {
+    "level": "HIGH",
+    "rationale": "在封包前提成立時，缺少獨立副本與未驗證回復能力足以穩定支持反對判斷；此信心不代表資料損失的發生機率。"
+  },
+  "key_strengths": [
+    "P1 可以釋放備份占用的空間，但封包沒有量化其收益。",
+    "B0 保留獨立備份並測試還原及遷移，直接處理主要失敗後果。"
+  ],
+  "key_weaknesses": [
+    "P1 在遷移前先移除唯一備份，削弱失敗後的回復能力。",
+    "P1 缺少還原測試，沒有證據支持正式切換後能安全回復。",
+    "缺少可接受損失、停機容忍度及遷移驗收標準。"
+  ],
+  "critical_risks": [
+    {
+      "id": "R01",
+      "description": "遷移若毀損或遺失正式資料，可能沒有可用副本復原，造成不可回復損失。",
+      "severity": "CRITICAL",
+      "irreversible": true,
+      "grounding": "SUPPORTED",
+      "basis": "E01 與 E03 支持唯一獨立回復副本會被移除；E04 說明條件式損失路徑。封包支持風險結構，但沒有證明遷移一定失敗或量化機率。",
+      "evidence_ids": [
+        "E01",
+        "E03",
+        "E04"
+      ],
+      "mitigations": [
+        "保留獨立備份，在驗證新副本可還原之前不刪除舊副本。",
+        "完成還原與遷移演練後再決定正式切換。",
+        "明定回復程序與切換停止條件。"
+      ]
+    },
+    {
+      "id": "R02",
+      "description": "切換失敗時才發現回復程序不可用，可能延長服務中斷。",
+      "severity": "HIGH",
+      "irreversible": false,
+      "grounding": "HYPOTHETICAL",
+      "basis": "E02 表示未做還原測試，因此程序故障尚未被排除；是否發生中斷與中斷長度均無資料。",
+      "evidence_ids": [
+        "E02"
+      ],
+      "mitigations": [
+        "在隔離環境驗證還原、資料完整性與必要服務功能。",
+        "量測還原時間並對照可接受停機時間。"
+      ]
+    }
+  ],
+  "assumptions": [
+    "正式資料具有保留價值，沿用封包假設。",
+    "唯一備份表示沒有另一份獨立可還原副本，沿用封包假設。",
+    "評分僅評估方案設計，不表示已授權或執行資料庫操作。"
+  ],
+  "evidence": [
+    {
+      "id": "E01",
+      "claim": "提案會在正式遷移前刪除唯一備份。",
+      "kind": "USER_PROVIDED",
+      "source": "user:測試情境原始問題",
+      "locator": "evals/fixtures/critical_flaw.packet.json#/known_facts/0",
+      "observed_at": null,
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "E02",
+      "claim": "提案沒有執行還原測試就直接切換。",
+      "kind": "USER_PROVIDED",
+      "source": "user:測試情境原始問題",
+      "locator": "evals/fixtures/critical_flaw.packet.json#/known_facts/1",
+      "observed_at": null,
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "E03",
+      "claim": "題述唯一備份表示沒有另一份獨立可還原副本。",
+      "kind": "ASSUMPTION",
+      "source": "凍結測試封包",
+      "locator": "evals/fixtures/critical_flaw.packet.json#/assumptions/1",
+      "observed_at": null,
+      "verification": "UNVERIFIED"
+    },
+    {
+      "id": "E04",
+      "claim": "若唯一備份已刪除且遷移破壞正式資料，封包沒有提供其他可用復原途徑，故不可回復資料損失是可信的條件式風險。",
+      "kind": "INFERENCE",
+      "source": null,
+      "locator": null,
+      "observed_at": null,
+      "verification": "NOT_APPLICABLE"
+    },
+    {
+      "id": "E05",
+      "claim": "B0 規劃先保留獨立備份、測試還原與遷移，再決定切換。",
+      "kind": "USER_PROVIDED",
+      "source": "凍結測試封包",
+      "locator": "evals/fixtures/critical_flaw.packet.json#/options/1",
+      "observed_at": null,
+      "verification": "UNVERIFIED"
+    }
+  ],
+  "alternatives": [
+    "採 B0：暫緩切換，保留獨立備份並完成還原及遷移測試。",
+    "若容量不足，先評估可容納獨立副本的儲存方式，再重新安排遷移；不假設額外容量目前可取得。"
+  ],
+  "what_would_change_my_mind": [
+    "提供另一份獨立且經實際還原驗證的完整副本，並證明正式切換具有可執行的回復程序；這也會改變目前 P1 的核心前提。"
+  ],
+  "scores": {
+    "P1": {
+      "value": {
+        "score": 1,
+        "rationale": "節省空間但破壞資料保全與可回復的主要目標。"
+      },
+      "feasibility": {
+        "score": 2,
+        "rationale": "刪除與切換在概念上可執行，但沒有足夠資訊證明能安全完成遷移。"
+      },
+      "cost_efficiency": {
+        "score": "N/A",
+        "rationale": "未量化節省空間、資料價值與失敗成本，無法比較總成本。"
+      },
+      "risk_safety": {
+        "score": 1,
+        "rationale": "移除唯一備份並缺少還原驗證，保留可信的不可回復損失路徑。"
+      },
+      "reversibility": {
+        "score": 1,
+        "rationale": "唯一獨立副本被刪除後，未提供可靠回復途徑。"
+      },
+      "evidence_quality": {
+        "score": 2,
+        "rationale": "封包清楚描述危險前提，但無實測或已驗證的遷移及復原資料。"
+      }
+    },
+    "B0": {
+      "value": {
+        "score": 4,
+        "rationale": "方案直接維護資料保全與可回復條件，但暫緩達成切換。"
+      },
+      "feasibility": {
+        "score": 3,
+        "rationale": "保留備份與測試是明確步驟，但容量、測試環境和時間限制未知。"
+      },
+      "cost_efficiency": {
+        "score": "N/A",
+        "rationale": "未提供儲存與測試成本，也未量化延後切換的機會成本。"
+      },
+      "risk_safety": {
+        "score": 4,
+        "rationale": "保留副本與事前測試能處理主要失敗路徑，但成功測試尚未發生。"
+      },
+      "reversibility": {
+        "score": 4,
+        "rationale": "保留獨立副本並要求驗證，有助建立回復途徑，仍須實際證明。"
+      },
+      "evidence_quality": {
+        "score": 2,
+        "rationale": "只有方案規劃，尚無備份可用性與還原測試結果。"
+      }
+    }
+  },
+  "verification_flags": {
+    "core_evidence_insufficient": false,
+    "disputed_claims": [],
+    "decision_reversing_claims": [
+      "是否實際存在另一份獨立且經還原驗證的完整副本。",
+      "是否已有可重現的還原測試及正式切換回復程序證據。"
+    ]
+  }
+}

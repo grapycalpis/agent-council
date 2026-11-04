@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0",
+  "request_id": "EVAL-COMPARE-001",
+  "original_question": "內部知識庫要選 GitHub Markdown、託管 Wiki，還是維持共用文件？",
+  "neutral_question": "以權限、版本追蹤、非技術使用者體驗、維護成本及可攜性公平比較三個知識庫方案。",
+  "problem_type": "Option Comparison",
+  "evaluation_mode": "COMPARISON",
+  "objective": "改善知識可尋性與協作，同時控制遷移成本。",
+  "constraints": [
+    "不假設各託管服務的最新定價或功能。"
+  ],
+  "known_facts": [
+    {
+      "id": "F01",
+      "claim": "候選包含 GitHub Markdown、託管 Wiki、現有共用文件。",
+      "source": "user:原始問題"
+    }
+  ],
+  "assumptions": [
+    "團隊包含技術與非技術使用者。"
+  ],
+  "unknowns": [
+    "人數、現有訂閱、合規與身分管理需求未提供。"
+  ],
+  "options": [
+    {
+      "id": "P1",
+      "label": "GitHub Markdown",
+      "description": "以 Git 版本管理文件。",
+      "status_quo": false
+    },
+    {
+      "id": "P2",
+      "label": "託管 Wiki",
+      "description": "採用有視覺編輯介面的知識庫服務，產品未指定。",
+      "status_quo": false
+    },
+    {
+      "id": "B0",
+      "label": "維持共用文件",
+      "description": "整理現有文件並改善索引。",
+      "status_quo": true
+    }
+  ],
+  "primary_option_id": null,
+  "baseline_rationale": "以維持現狀為比較基準。",
+  "criteria": [
+    {
+      "dimension": "value",
+      "priority": "HIGH",
+      "rationale": "是否達成使用者目標"
+    },
+    {
+      "dimension": "feasibility",
+      "priority": "HIGH",
+      "rationale": "是否能在現有限制下執行"
+    },
+    {
+      "dimension": "cost_efficiency",
+      "priority": "MEDIUM",
+      "rationale": "資源與機會成本"
+    },
+    {
+      "dimension": "risk_safety",
+      "priority": "HIGH",
+      "rationale": "失敗後果與緩解"
+    },
+    {
+      "dimension": "reversibility",
+      "priority": "HIGH",
+      "rationale": "是否可安全回復"
+    },
+    {
+      "dimension": "evidence_quality",
+      "priority": "HIGH",
+      "rationale": "核心主張的可靠程度"
+    }
+  ],
+  "domain_specialty": "Knowledge Management and Collaboration Architect",
+  "high_stakes": false,
+  "high_stakes_rationale": "未辨識重大不可逆後果，仍由評審檢查。",
+  "review_timeout_seconds": 180
+}

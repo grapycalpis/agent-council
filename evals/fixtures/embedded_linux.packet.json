@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0",
+  "request_id": "EVAL-EMBEDDED-001",
+  "original_question": "我想在 Embedded Linux 專案採用 Rust 取代部分 C，值得嗎？",
+  "neutral_question": "在目前未知的平台與團隊條件下，局部引入 Rust 與維持 C 各有何效益、風險與驗證需求？",
+  "problem_type": "Technical Architecture Review",
+  "evaluation_mode": "SINGLE",
+  "objective": "降低記憶體安全缺陷並維持既有裝置功能與交付能力。",
+  "constraints": [
+    "不假設可全面重寫或升級所有硬體。"
+  ],
+  "known_facts": [
+    {
+      "id": "F01",
+      "claim": "使用者正在考慮 Embedded Linux 專案局部採用 Rust。",
+      "source": "user:原始問題"
+    }
+  ],
+  "assumptions": [
+    "先評估非安全關鍵的 userspace 元件。"
+  ],
+  "unknowns": [
+    "SoC、工具鏈、核心版本、C ABI、團隊技能、效能與時程未知。"
+  ],
+  "options": [
+    {
+      "id": "P1",
+      "label": "局部導入 Rust",
+      "description": "先以可隔離的 userspace 元件建立試點。",
+      "status_quo": false
+    },
+    {
+      "id": "B0",
+      "label": "維持 C",
+      "description": "維持既有 C 實作並改善分析與測試。",
+      "status_quo": true
+    }
+  ],
+  "primary_option_id": "P1",
+  "baseline_rationale": "以維持現狀為比較基準。",
+  "criteria": [
+    {
+      "dimension": "value",
+      "priority": "HIGH",
+      "rationale": "是否達成使用者目標"
+    },
+    {
+      "dimension": "feasibility",
+      "priority": "HIGH",
+      "rationale": "是否能在現有限制下執行"
+    },
+    {
+      "dimension": "cost_efficiency",
+      "priority": "MEDIUM",
+      "rationale": "資源與機會成本"
+    },
+    {
+      "dimension": "risk_safety",
+      "priority": "HIGH",
+      "rationale": "失敗後果與緩解"
+    },
+    {
+      "dimension": "reversibility",
+      "priority": "HIGH",
+      "rationale": "是否可安全回復"
+    },
+    {
+      "dimension": "evidence_quality",
+      "priority": "HIGH",
+      "rationale": "核心主張的可靠程度"
+    }
+  ],
+  "domain_specialty": "Senior Embedded Linux and Rust Interoperability Engineer",
+  "high_stakes": false,
+  "high_stakes_rationale": "未辨識重大不可逆後果，仍由評審檢查。",
+  "review_timeout_seconds": 180
+}

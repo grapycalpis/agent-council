@@ -1,0 +1,3 @@
+# Maintenance validation only; normal Council use has no Python dependencies.
+jsonschema==4.25.1
+tomli==2.3.0; python_version < '3.11'

@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0",
+  "request_id": "SMOKE-CRITICAL-001",
+  "agent_id": "V02",
+  "role": "Risk Auditor",
+  "findings": [
+    {
+      "claim_id": "C01",
+      "claim": "在封包設定的刪除唯一備份且不存在其他獨立可還原副本之前提下，若遷移損毀原始資料，可能沒有已知的獨立還原途徑。",
+      "status": "CONFIRMED",
+      "rationale": "已讀取的封包明載遷移前刪除唯一備份，並假設沒有另一份獨立可還原副本。因此，原始資料若遭遷移損毀，封包沒有提供仍可使用的獨立還原來源。此結論確認的是條件式失敗鏈，不表示損毀必然發生，也不證明真實系統完全不存在其他恢復技術。",
+      "evidence_ids": [
+        "E01",
+        "E02"
+      ],
+      "decision_impact": "此條件式失敗鏈直接影響資料保全與可回復性；在確認可用的獨立還原來源前，不能將遷移描述為已有可證明的安全回復途徑。",
+      "limitations": [
+        "未檢查實際資料庫、備份清冊、交易日誌或儲存快照。",
+        "無法據此估計資料損毀機率或實際損失範圍。"
+      ]
+    },
+    {
+      "claim_id": "C02",
+      "claim": "封包沒有提供切換前的還原測試，因此還原能力及恢復時間尚未被展示；實際是否發生中斷或不可接受的延遲仍未知。",
+      "status": "CONFIRMED",
+      "rationale": "封包 F02 明載未執行還原測試即切換，亦未提供成功還原紀錄、恢復耗時或可接受中斷門檻。因此，封包不足以展示還原能力及恢復時間。缺乏測試本身不能證明一定停機、一定無法恢復或恢復時間一定不可接受。",
+      "evidence_ids": [
+        "E01",
+        "E03"
+      ],
+      "decision_impact": "恢復能力與時間缺少可檢驗的依據，限制了對切換後可用性及回復時程的判斷。",
+      "limitations": [
+        "沒有實測恢復時間或系統可用性資料。",
+        "封包未提供可接受中斷時間，無法判定延遲是否超標。"
+      ]
+    },
+    {
+      "claim_id": "C03",
+      "claim": "使用者的真實系統是否另有獨立可還原副本或經測試的恢復機制？",
+      "status": "UNRESOLVED",
+      "rationale": "封包對其他副本的排除是測試情境假設，並非真實系統盤點結果。允許的資料僅有封包及輸出契約，沒有實際備份、快照、日誌保留或恢復演練紀錄，無法確認或否認真實系統存在其他恢復機制。",
+      "evidence_ids": [
+        "E01"
+      ],
+      "decision_impact": "若存在可獨立還原且經驗證的機制，可能改變失敗後的可回復性判斷；目前不能把情境假設當成真實系統已查證的事實。",
+      "limitations": [
+        "未獲提供或檢查任何真實系統證據。",
+        "沒有其他副本的證據，不等同於已證明其他副本不存在。"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E01",
+      "claim": "已實際讀取的測試封包在 F01 記載遷移前刪除唯一備份、F02 記載不先執行還原測試，並在 assumptions 明列沒有另一份獨立可還原副本；全文未提供實際系統盤點或恢復測試紀錄。此項驗證僅涵蓋封包內容。",
+      "kind": "SOURCE",
+      "source": "/Users/cs/workspace/hsing/github/perspective-council/evals/fixtures/critical_flaw.packet.json",
+      "locator": "/known_facts/0; /known_facts/1; /assumptions/1; /unknowns",
+      "observed_at": "2026-11-04",
+      "verification": "VERIFIED"
+    },
+    {
+      "id": "E02",
+      "claim": "在唯一備份已刪除、沒有其他獨立可還原副本且原始資料遭損毀的條件下，封包未留下已知獨立還原來源；這是依情境前提推導的可能失敗結果。",
+      "kind": "INFERENCE",
+      "source": "/Users/cs/workspace/hsing/github/perspective-council/evals/fixtures/critical_flaw.packet.json",
+      "locator": "/known_facts/0; /assumptions/1",
+      "observed_at": null,
+      "verification": "NOT_APPLICABLE"
+    },
+    {
+      "id": "E03",
+      "claim": "封包未提供還原測試、恢復耗時或中斷容忍門檻，因此不能從封包證明恢復能力、推定必然停機，或判定恢復延遲是否不可接受。",
+      "kind": "INFERENCE",
+      "source": "/Users/cs/workspace/hsing/github/perspective-council/evals/fixtures/critical_flaw.packet.json",
+      "locator": "/known_facts/1; /unknowns",
+      "observed_at": null,
+      "verification": "NOT_APPLICABLE"
+    }
+  ],
+  "limitations": [
+    "本次僅核對指定本機封包並分析條件式風險；未進行外部研究或實際系統檢查。",
+    "已確認封包文字不等於已確認其描述符合使用者真實系統。",
+    "未讀取首輪評審結果，未修改任何已鎖定判斷，也未提交投票。"
+  ]
+}
