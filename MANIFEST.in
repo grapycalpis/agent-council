@@ -1,0 +1,8 @@
+include AGENTS.md
+recursive-include docs *.md *.json
+recursive-include config *.yaml
+recursive-include ideas *.yaml
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include .codex/agents *.toml
+recursive-include .github/workflows *.yml

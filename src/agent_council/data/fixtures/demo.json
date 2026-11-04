@@ -1,0 +1,937 @@
+{
+  "idea": {
+    "title": "小型團隊試行每週一天遠端工作",
+    "description": "先用八週可撤回的試行，評估每週一天遠端工作是否改善專注與協作。",
+    "context": "一個十二人的軟體團隊；目前沒有提供量測基線與匿名調查。",
+    "goals": [
+      "觀察專注工作與交付品質",
+      "辨識協作與公平性影響"
+    ],
+    "constraints": [
+      "試行八週",
+      "不得增加人力預算",
+      "涉及敏感資料的工作維持既有存取規範"
+    ],
+    "evidence": []
+  },
+  "responses": {
+    "initial.software_engineer": {
+      "agent_id": "software_engineer",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】從技術可行性與維護成本看，實作複雜度需要基線與可撤回的試行。",
+      "concerns": [
+        "實作複雜度缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少實作複雜度的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.software_engineer": {
+      "agent_id": "software_engineer",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】依實作複雜度角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少實作複雜度的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "實作複雜度惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄實作複雜度基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "實作複雜度的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.entrepreneur": {
+      "agent_id": "entrepreneur",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】從商業模式與執行可行性看，客戶需求需要基線與可撤回的試行。",
+      "concerns": [
+        "客戶需求缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少客戶需求的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.entrepreneur": {
+      "agent_id": "entrepreneur",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依客戶需求角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少客戶需求的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "客戶需求惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄客戶需求基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "客戶需求的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.investor": {
+      "agent_id": "investor",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】從資本效率與下行風險看，資本需求需要基線與可撤回的試行。",
+      "concerns": [
+        "資本需求缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少資本需求的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.investor": {
+      "agent_id": "investor",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依資本需求角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少資本需求的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "資本需求惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄資本需求基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "資本需求的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.economist": {
+      "agent_id": "economist",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】從誘因與資源分配看，機會成本需要基線與可撤回的試行。",
+      "concerns": [
+        "機會成本缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少機會成本的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.economist": {
+      "agent_id": "economist",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】依機會成本角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少機會成本的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "機會成本惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄機會成本基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "機會成本的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.psychologist": {
+      "agent_id": "psychologist",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】從人類行為與認知偏誤看，採納阻力需要基線與可撤回的試行。",
+      "concerns": [
+        "採納阻力缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少採納阻力的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.psychologist": {
+      "agent_id": "psychologist",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依採納阻力角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": true,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少採納阻力的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "採納阻力惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄採納阻力基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "採納阻力的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.scientist": {
+      "agent_id": "scientist",
+      "vote": "ABSTAIN",
+      "reasoning": "【模擬資料】從證據與可證偽性看，證據品質需要基線與可撤回的試行。",
+      "concerns": [
+        "證據品質缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少證據品質的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.scientist": {
+      "agent_id": "scientist",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依證據品質角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": true,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少證據品質的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "證據品質惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄證據品質基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "證據品質的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.risk_analyst": {
+      "agent_id": "risk_analyst",
+      "vote": "OPPOSE",
+      "reasoning": "【模擬資料】從不確定性與失敗模式看，尾端風險需要基線與可撤回的試行。",
+      "concerns": [
+        "尾端風險缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少尾端風險的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.risk_analyst": {
+      "agent_id": "risk_analyst",
+      "vote": "OPPOSE",
+      "reasoning": "【模擬資料】依尾端風險角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少尾端風險的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "尾端風險惡化未被及時察覺",
+          "impact": 4,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄尾端風險基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "尾端風險的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": [
+        {
+          "assumption": "試行可被撤回",
+          "reason": "【模擬資料】流程可撤回，不代表潛在的信任損害也能恢復。",
+          "source": "opening.pro"
+        }
+      ]
+    },
+    "initial.consumer": {
+      "agent_id": "consumer",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】從實際易用性與價值看，易用性需要基線與可撤回的試行。",
+      "concerns": [
+        "易用性缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少易用性的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.consumer": {
+      "agent_id": "consumer",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】依易用性角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少易用性的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "易用性惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄易用性基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "易用性的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.ethicist": {
+      "agent_id": "ethicist",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】從倫理影響與利害關係人看，公平性需要基線與可撤回的試行。",
+      "concerns": [
+        "公平性缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少公平性的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.ethicist": {
+      "agent_id": "ethicist",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依公平性角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少公平性的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "公平性惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄公平性基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "公平性的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.legal_expert": {
+      "agent_id": "legal_expert",
+      "vote": "ABSTAIN",
+      "reasoning": "【模擬資料】從法律與監管暴露看，司法管轄需要基線與可撤回的試行。",
+      "concerns": [
+        "司法管轄缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少司法管轄的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.legal_expert": {
+      "agent_id": "legal_expert",
+      "vote": "ABSTAIN",
+      "reasoning": "【模擬資料】依司法管轄角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少司法管轄的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "司法管轄惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄司法管轄基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "司法管轄的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.product_manager": {
+      "agent_id": "product_manager",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】從產品市場契合與優先順序看，目標客群需要基線與可撤回的試行。",
+      "concerns": [
+        "目標客群缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少目標客群的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.product_manager": {
+      "agent_id": "product_manager",
+      "vote": "SUPPORT",
+      "reasoning": "【模擬資料】依目標客群角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": false,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少目標客群的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "目標客群惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄目標客群基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "目標客群的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "initial.skeptic": {
+      "agent_id": "skeptic",
+      "vote": "OPPOSE",
+      "reasoning": "【模擬資料】從未證實假設與邏輯缺口看，反例需要基線與可撤回的試行。",
+      "concerns": [
+        "反例缺少基線",
+        "協作成本尚未量測",
+        "八週觀察可能受季節與任務差異影響"
+      ],
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少反例的前後比較資料"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      }
+    },
+    "final.skeptic": {
+      "agent_id": "skeptic",
+      "vote": "CONDITIONAL",
+      "reasoning": "【模擬資料】依反例角度，正方的可撤回性與反方的協作風險都需要實測。",
+      "changed": true,
+      "change_reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。",
+      "important_evidence": [
+        {
+          "claim": "提案將試行限制為八週",
+          "status": "user_provided",
+          "source": null,
+          "verification_note": "僅引用提案，沒有外部查證。"
+        }
+      ],
+      "remaining_uncertainties": [
+        "缺少協作成本與個人差異的實測"
+      ],
+      "confidence": 2,
+      "assessment": {
+        "feasibility": 4,
+        "expected_value": 3,
+        "risk": 3,
+        "evidence_quality": 1
+      },
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "evidence_gaps": [
+        "缺少反例的前後比較資料"
+      ],
+      "critical_risks": [
+        {
+          "description": "反例惡化未被及時察覺",
+          "impact": 3,
+          "likelihood": "unknown"
+        }
+      ],
+      "experiments": [
+        "【模擬資料】先記錄反例基線，每兩週檢視與訪談，出現明顯惡化即停止。"
+      ],
+      "reversal_conditions": [
+        "反例的實測結果與原假設矛盾時重新評估。"
+      ],
+      "contradictions": [],
+      "disputed_assumptions": []
+    },
+    "opening.pro": {
+      "agent_id": "pro",
+      "phase": "opening",
+      "arguments": [
+        "【模擬資料】試行可撤回，可能增加專注時間；應先定義成功條件。"
+      ],
+      "evidence": [
+        {
+          "claim": "遠端工作可能影響專注或協作",
+          "status": "unverified",
+          "source": null,
+          "verification_note": "離線 fixture，未查證任何外部研究。"
+        }
+      ],
+      "assumptions": [
+        "試行可被撤回"
+      ],
+      "uncertainties": [
+        "任務差異與人員偏好尚未量測"
+      ]
+    },
+    "opening.con": {
+      "agent_id": "con",
+      "phase": "opening",
+      "arguments": [
+        "【模擬資料】協作、公平性與資料存取成本仍未知；需要基線與停止條件。"
+      ],
+      "evidence": [
+        {
+          "claim": "遠端工作可能影響專注或協作",
+          "status": "unverified",
+          "source": null,
+          "verification_note": "離線 fixture，未查證任何外部研究。"
+        }
+      ],
+      "assumptions": [
+        "試行可被撤回"
+      ],
+      "uncertainties": [
+        "任務差異與人員偏好尚未量測"
+      ]
+    },
+    "rebuttal.pro": {
+      "agent_id": "pro",
+      "phase": "rebuttal",
+      "arguments": [
+        "【模擬資料】針對對方開場：試行可撤回，可能增加專注時間；應先定義成功條件。"
+      ],
+      "evidence": [
+        {
+          "claim": "遠端工作可能影響專注或協作",
+          "status": "unverified",
+          "source": null,
+          "verification_note": "離線 fixture，未查證任何外部研究。"
+        }
+      ],
+      "assumptions": [
+        "試行可被撤回"
+      ],
+      "uncertainties": [
+        "任務差異與人員偏好尚未量測"
+      ]
+    },
+    "rebuttal.con": {
+      "agent_id": "con",
+      "phase": "rebuttal",
+      "arguments": [
+        "【模擬資料】針對對方開場：協作、公平性與資料存取成本仍未知；需要基線與停止條件。"
+      ],
+      "evidence": [
+        {
+          "claim": "遠端工作可能影響專注或協作",
+          "status": "unverified",
+          "source": null,
+          "verification_note": "離線 fixture，未查證任何外部研究。"
+        }
+      ],
+      "assumptions": [
+        "試行可被撤回"
+      ],
+      "uncertainties": [
+        "任務差異與人員偏好尚未量測"
+      ]
+    }
+  }
+}

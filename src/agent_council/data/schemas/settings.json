@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "backend": {
+      "enum": [
+        "native",
+        "mock"
+      ]
+    },
+    "max_concurrency": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "max_retries": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 3
+    }
+  },
+  "required": [
+    "backend",
+    "max_concurrency",
+    "max_retries"
+  ],
+  "additionalProperties": false
+}

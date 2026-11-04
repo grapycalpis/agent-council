@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "vote": {
+      "enum": [
+        "SUPPORT",
+        "OPPOSE",
+        "CONDITIONAL",
+        "ABSTAIN"
+      ]
+    },
+    "reasoning": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "concerns": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "evidence_gaps": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      }
+    },
+    "confidence": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "assessment": {
+      "type": "object",
+      "properties": {
+        "feasibility": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "expected_value": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "risk": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "evidence_quality": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        }
+      },
+      "required": [
+        "feasibility",
+        "expected_value",
+        "risk",
+        "evidence_quality"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "agent_id",
+    "vote",
+    "reasoning",
+    "concerns",
+    "assumptions",
+    "evidence_gaps",
+    "confidence",
+    "assessment"
+  ],
+  "additionalProperties": false
+}

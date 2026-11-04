@@ -1,0 +1,300 @@
+{
+  "assumption_perspectives": [
+    {
+      "agent_id": "consumer",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "SUPPORT"
+    },
+    {
+      "agent_id": "economist",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "SUPPORT"
+    },
+    {
+      "agent_id": "entrepreneur",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "ethicist",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "investor",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "legal_expert",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "ABSTAIN"
+    },
+    {
+      "agent_id": "product_manager",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "SUPPORT"
+    },
+    {
+      "agent_id": "psychologist",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "risk_analyst",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "OPPOSE"
+    },
+    {
+      "agent_id": "scientist",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "skeptic",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "CONDITIONAL"
+    },
+    {
+      "agent_id": "software_engineer",
+      "assumptions": [
+        "團隊能定期檢視試行指標"
+      ],
+      "vote": "SUPPORT"
+    }
+  ],
+  "assumptions": {
+    "團隊能定期檢視試行指標": [
+      "consumer",
+      "economist",
+      "entrepreneur",
+      "ethicist",
+      "investor",
+      "legal_expert",
+      "product_manager",
+      "psychologist",
+      "risk_analyst",
+      "scientist",
+      "skeptic",
+      "software_engineer"
+    ]
+  },
+  "changes": [
+    {
+      "agent_id": "consumer",
+      "changed": false,
+      "final_vote": "SUPPORT",
+      "initial_vote": "SUPPORT",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "economist",
+      "changed": false,
+      "final_vote": "SUPPORT",
+      "initial_vote": "SUPPORT",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "entrepreneur",
+      "changed": false,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "CONDITIONAL",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "ethicist",
+      "changed": false,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "CONDITIONAL",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "investor",
+      "changed": false,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "CONDITIONAL",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "legal_expert",
+      "changed": false,
+      "final_vote": "ABSTAIN",
+      "initial_vote": "ABSTAIN",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "product_manager",
+      "changed": false,
+      "final_vote": "SUPPORT",
+      "initial_vote": "SUPPORT",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "psychologist",
+      "changed": true,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "SUPPORT",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "risk_analyst",
+      "changed": false,
+      "final_vote": "OPPOSE",
+      "initial_vote": "OPPOSE",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "scientist",
+      "changed": true,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "ABSTAIN",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "skeptic",
+      "changed": true,
+      "final_vote": "CONDITIONAL",
+      "initial_vote": "OPPOSE",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    },
+    {
+      "agent_id": "software_engineer",
+      "changed": false,
+      "final_vote": "SUPPORT",
+      "initial_vote": "SUPPORT",
+      "reason": "【模擬資料】辯論強調停止條件與公平性；依該角色的驗證要求調整或保留立場。"
+    }
+  ],
+  "complete": true,
+  "consensus_is_proof": false,
+  "contradictions": [],
+  "debate_missing": [],
+  "disputed_assumptions": [
+    {
+      "agent_id": "risk_analyst",
+      "assumption": "試行可被撤回",
+      "reason": "【模擬資料】流程可撤回，不代表潛在的信任損害也能恢復。",
+      "source": "opening.pro"
+    }
+  ],
+  "evidence_gaps": {
+    "缺少公平性的前後比較資料": [
+      "ethicist"
+    ],
+    "缺少反例的前後比較資料": [
+      "skeptic"
+    ],
+    "缺少司法管轄的前後比較資料": [
+      "legal_expert"
+    ],
+    "缺少客戶需求的前後比較資料": [
+      "entrepreneur"
+    ],
+    "缺少實作複雜度的前後比較資料": [
+      "software_engineer"
+    ],
+    "缺少尾端風險的前後比較資料": [
+      "risk_analyst"
+    ],
+    "缺少採納阻力的前後比較資料": [
+      "psychologist"
+    ],
+    "缺少易用性的前後比較資料": [
+      "consumer"
+    ],
+    "缺少機會成本的前後比較資料": [
+      "economist"
+    ],
+    "缺少目標客群的前後比較資料": [
+      "product_manager"
+    ],
+    "缺少證據品質的前後比較資料": [
+      "scientist"
+    ],
+    "缺少資本需求的前後比較資料": [
+      "investor"
+    ]
+  },
+  "failures": [],
+  "final": {
+    "counts": {
+      "ABSTAIN": 1,
+      "CONDITIONAL": 6,
+      "OPPOSE": 1,
+      "SUPPORT": 4
+    },
+    "leading_votes": [
+      "CONDITIONAL"
+    ],
+    "majority": null,
+    "missing": [],
+    "valid_count": 12
+  },
+  "initial": {
+    "counts": {
+      "ABSTAIN": 2,
+      "CONDITIONAL": 3,
+      "OPPOSE": 2,
+      "SUPPORT": 5
+    },
+    "leading_votes": [
+      "SUPPORT"
+    ],
+    "majority": null,
+    "missing": [],
+    "valid_count": 12
+  },
+  "minority_ids": [
+    "consumer",
+    "economist",
+    "entrepreneur",
+    "ethicist",
+    "investor",
+    "legal_expert",
+    "product_manager",
+    "psychologist",
+    "risk_analyst",
+    "scientist",
+    "skeptic",
+    "software_engineer"
+  ],
+  "phase_missing": [],
+  "shared_assumptions": {
+    "團隊能定期檢視試行指標": [
+      "consumer",
+      "economist",
+      "entrepreneur",
+      "ethicist",
+      "investor",
+      "legal_expert",
+      "product_manager",
+      "psychologist",
+      "risk_analyst",
+      "scientist",
+      "skeptic",
+      "software_engineer"
+    ]
+  }
+}

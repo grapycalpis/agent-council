@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "attempt": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "output": {},
+    "context_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "context_mode": {
+      "enum": [
+        "fresh",
+        "resumed"
+      ]
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "token_usage": {
+      "anyOf": [
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "provenance": {
+      "const": "operator_attested"
+    },
+    "submitted_at": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "task_id",
+    "attempt",
+    "output",
+    "context_id",
+    "context_mode",
+    "model",
+    "token_usage",
+    "provenance",
+    "submitted_at"
+  ],
+  "additionalProperties": false
+}

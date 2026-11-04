@@ -1,0 +1,4 @@
+# 原生互動後端不會由 Python 自行啟動代理，請搭配 docs/NATIVE_CODEX.md。
+backend: native
+max_concurrency: 3
+max_retries: 1

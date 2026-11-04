@@ -1,0 +1,3 @@
+backend: native
+max_concurrency: 3
+max_retries: 1
